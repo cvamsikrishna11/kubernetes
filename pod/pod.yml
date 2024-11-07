@@ -1,0 +1,18 @@
+apiVersion: v1 # mandate, API version to pull the resource and can change based on the resource
+kind: Pod # mandate, Kuberentes Pod resource, case-senstive
+metadata: 
+  name: my-app # mandate, name of the resource
+  labels:
+    app: my-app # optional but best practice to organize, manage, select resources
+  annotations: # optional non-identifying metadata to resources, can include information for auditing, logging, debugging, or integration with external tools
+    description: "This is a demo pod with annotations."
+    buildVersion: "v1.3.2"
+    managedBy: "team-devops"
+    logging: "enabled"
+    monitoring: "true"
+spec: # mandate, specifications of the resource
+  containers: 
+  - name: my-container
+    image: nginx:latest
+    ports:
+      - containerPort: 80
