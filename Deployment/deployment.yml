@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: facebook-backend-deployment
+  labels:
+    app: facebook-backend
+  annotations:  # Optional metadata for auditing, logging, debugging, or integration with external tools
+    description: "This is a Facebook backend deployment with annotations."
+    buildVersion: "v1.3.2"
+    managedBy: "team-devops"
+    logging: "enabled"
+    monitoring: "true"
+spec:
+  replicas: 3  # Optional; defaults to 1 if omitted
+  selector: 
+    matchLabels:
+      app: facebook-backend  # Ensures the Deployment manages only Pods with this label
+  template:
+    metadata:
+      labels:
+        app: facebook-backend
+    spec:
+      containers:
+      - name: backend
+        image: nginx:latest
+        ports:
+        - containerPort: 80

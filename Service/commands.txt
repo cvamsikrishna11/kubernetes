@@ -1,0 +1,6 @@
+kubectl apply -f service.yml
+kubectl delete -f service.yml
+
+kubectl get service
+
+kubectl describe service facebook-backend-service

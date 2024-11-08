@@ -1,0 +1,6 @@
+kubectl apply -f Deployment/deployment.yml
+kubectl delete -f Deployment/deployment.yml
+
+kubectl get deployments
+
+kubectl describe pod facebook-backend-deployment

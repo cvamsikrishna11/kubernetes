@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: facebook-backend-service
+  labels:
+    app: facebook-backend
+spec:
+  selector:
+    app: facebook-backend  # Matches Pods created by facebook-backend-deployment
+  ports:
+    - protocol: TCP
+      port: 80              # The port that the Service will expose
+      targetPort: 80        # The port on the Pods that the traffic will be directed to
+  type: ClusterIP  # Exposes the Service only within the cluster (default)
