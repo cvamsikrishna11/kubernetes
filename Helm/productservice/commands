@@ -1,3 +1,4 @@
+# https://artifacthub.io/ is the repo for helm charts
 # minikube service SERVICE_NAME
 # to be accessed on /api/products
 
