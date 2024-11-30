@@ -10,5 +10,6 @@ spec:
   ports:
     - protocol: TCP
       port: 80              # The port that the Service will expose
-      targetPort: 80        # The port on the Pods that the traffic will be directed to
+      targetPort: 80
+      nodePort: 30007       # Exposes the Service on a static port across each Node in the cluster.
   type: ClusterIP  # Exposes the Service only within the cluster (default)

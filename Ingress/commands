@@ -1,0 +1,36 @@
+# Easiest way 
+minikube service NAME_OF_THE_SERVICE_TO_EXPOSE
+
+or 
+
+kubectl port-forward service/hello-minikube 7080:8080
+
+# DNS resolution
+sudo nano /etc/hosts
+
+# Comment line
+127.0.0.1      localhost to #127.0.0.1      localhost
+
+# Make entry with 
+127.0.0.1 example.com
+
+# start minikube
+minikube start
+
+# add ingress controller
+minikube addons enable ingress-dns
+minikube addons enable ingress
+
+# In a separate terminal open minikube tunnel and keep it open
+minikube tunnel
+
+
+# Execute the following
+kubectl apply -f .
+
+Now we should be able to access -
+
+http://example.com/app1
+http://example.com/app2
+
+Note: Remeber to uncomment existing line

@@ -4,3 +4,7 @@ kubectl delete -f pod.yml
 kubectl get pods
 
 kubectl describe pod my-app
+
+kubectl port-forward my-app 3000:80
+
+kubectl port-forward --address 0.0.0.0 my-app 3000:80
